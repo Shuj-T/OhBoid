@@ -35,7 +35,7 @@ class Boid {
      */
     draw(context) {
         this.drawBoid(context);
-        if (debug_check_box) {
+        if (debug_checkbox) {
             this.drawPerception(context);
             this.drawVelocity(context);
         }
@@ -78,13 +78,13 @@ class Boid {
     }
 
     /**
+     * @description draws a circle on the canvas
      * @param {context} context 
      * @param {float} x 
      * @param {float} y 
      * @param {int} radius 
      * @param {*} colour 
      * @param {boolean} fill 
-     * @description draws a circle on the canvas
      */
     drawCircle(context, x, y, radius, colour, fill) {
         context.strokeStyle = colour;
@@ -92,23 +92,25 @@ class Boid {
 
         context.beginPath();
         context.arc(x, y, radius, 0, Math.PI * 2, false);
-
+        context.stroke();
+        
         if (fill) {
             context.fillStyle = colour;
             context.fill();
         }
         if (fill && glow_checkbox) {
-            context.stroke();
             context.lineWidth = 0;
             context.shadowColor = colour;
-            context.shadowBlur = 100 * this.count;
-            context.shadowOffsetX = 0;
-            context.shadowOffsetY = 0;
+            context.shadowBlur = this.count;
             context.stroke();
             context.fill();
-            context.closePath();
+        }else{
+            context.lineWidth = 0;
+            context.shadowColor = 0;
+            context.shadowBlur = 0;
+            context.shadowOffsetX = 0;
+            context.shadowOffsetY = 0;
         }
-        context.stroke();
         context.closePath();
     }
 
@@ -179,15 +181,22 @@ class Boid {
         // BOUNCE
         if (this.x <= 0) {
             this.vx *= -1;
+            this.x += this.vx;
+
         }
         if (this.x >= WIDTH) {
             this.vx *= -1;
+            this.x += this.vx;
         }
         if (this.y <= 1) {
             this.vy *= -1;
+            this.y += this.vy;
+
         }
         if (this.y >= HEIGHT) {
             this.vy *= -1;
+            this.y += this.vy;
+
         }
         // console.log("ax- ",this.ax,"\n ay- ",this.ay);
     }
@@ -305,7 +314,7 @@ class Boid {
         this.x += this.vx;
         this.y += this.vy;
 
-        if (bounce_check_box) {
+        if (bounce_checkbox) {
             this.wallBounce();
         } else {
             this.loopMap();
