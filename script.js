@@ -27,9 +27,9 @@ var PERCEPTION_WEIGHT = 50;
 
 function onGlowCheckBox(){
     if (document.getElementById("glowCheckBox").checked){
-        GLOW = true;
+        glow_checkbox = true;
     } else {
-        GLOW = false;
+        glow_checkbox = false;
     }
 }
 
