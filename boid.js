@@ -35,7 +35,7 @@ class Boid {
      */
     draw(context) {
         this.drawBoid(context);
-        if (DEBUG) {
+        if (debug_check_box) {
             this.drawPerception(context);
             this.drawVelocity(context);
         }
@@ -305,7 +305,7 @@ class Boid {
         this.x += this.vx;
         this.y += this.vy;
 
-        if (BOUNCE) {
+        if (bounce_check_box) {
             this.wallBounce();
         } else {
             this.loopMap();

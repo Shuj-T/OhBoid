@@ -13,9 +13,9 @@ var WIDTH = window.innerWidth*0.95;
 var HEIGHT = window.innerHeight*0.90;
 
 // Checkbox variables
-var GLOW = false;
-var DEBUG = false;
-var BOUNCE = false;
+var glow_checkbox = false;
+var debug_check_box = false;
+var bounce_check_box = false;
 
 // Slider variables
 var COHESION_WEIGHT = 50;
@@ -43,9 +43,9 @@ function onBounceCheckBox(){
 
 function onDebugCheckBox(){
     if (document.getElementById("debugCheckBox").checked){
-        DEBUG = true;
+        debug_check_box = true;
     } else {
-        DEBUG = false;
+        debug_check_box = false;
     }
 }
 
