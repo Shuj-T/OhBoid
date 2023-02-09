@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Oh Boid!</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="settingsContainer">
+            <div class="checkBoxContainer">
+                Attraction Glow: <input type="checkbox" id="glowChekcBox" onclick="onGlowCheckBox()" style="zoom:1.5;">
+                Wall Bounce: <input type="checkbox" id="bounceCheckBox" onclick="onBounceCheckBox()" style="zoom:1.5;">
+                Debug Mode: <input type="checkbox" id="debugCheckBox" onclick="onDebugCheckBox()" style="zoom:1.5;">
+
+            </div>
+            <div class="flockSliderContainer">
+                Cohesion:
+                <input type="range" min="1" max="100" value="50" class="slider" id="cohesionSlider" style="zoom:1.5;">
+                Alignment:
+                <input type="range" min="1" max="100" value="50" class="slider" id="alignmentSlider" style="zoom:1.5;">
+                Separation:
+                <input type="range" min="1" max="100" value="50" class="slider" id="separationSlider" style="zoom:1.5;">
+            </div>
+            <div class="flockSliderContainer">
+                Perception Radius:
+                <input type="range" min="1" max="100" value="50" class="slider" id="perceptionSlider" style="zoom:1.5;">
+            </div>
+        </div>
+        <canvas id="canvas"></canvas>
+
+
+        <script src="script.js"></script>
+    </body>
+</html>
