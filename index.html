@@ -15,10 +15,12 @@
     <body>
         <div class="settingsContainer">
             <div class="checkBoxContainer">
-                Attraction Glow: <input type="checkbox" id="glowChekcBox" onclick="onGlowCheckBox()" style="zoom:1.5;">
-                Wall Bounce: <input type="checkbox" id="bounceCheckBox" onclick="onBounceCheckBox()" style="zoom:1.5;">
-                Debug Mode: <input type="checkbox" id="debugCheckBox" onclick="onDebugCheckBox()" style="zoom:1.5;">
-
+                Attraction Glow: 
+                <input type="checkbox" id="glowCheckBox" onclick="onGlowCheckBox()" style="zoom:1.5;">
+                Wall Bounce: 
+                <input type="checkbox" id="bounceCheckBox" onclick="onBounceCheckBox()" style="zoom:1.5;">
+                Debug Mode: 
+                <input type="checkbox" id="debugCheckBox" onclick="onDebugCheckBox()" style="zoom:1.5;">
             </div>
             <div class="flockSliderContainer">
                 Cohesion:
@@ -34,8 +36,7 @@
             </div>
         </div>
         <canvas id="canvas"></canvas>
-
-
+        <script src="boid.js"></script>
         <script src="script.js"></script>
     </body>
 </html>
