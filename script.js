@@ -110,9 +110,13 @@ function init(){
     window.onresize = function(){ location.reload(); }
     
     // Create click listener
-    document.addEventListener('click', (e) => {
-        console.log(e.clientX,e.clientY);
-        let boid = new Boid(e.clientX, e.clientY, 10, "white", 1);
+    document.addEventListener('click', (event) => {
+        console.log(event.clientX,event.clientY);
+        var rect = canvas.getBoundingClientRect();
+        canvas_mouse_x = event.clientX - rect.left;
+        canvas_mouse_y = event.clientY - rect.top;
+
+        let boid = new Boid(canvas_mouse_x, canvas_mouse_y, 10, "white", 1);
         boid.draw(context);
         boids.push(boid);
     });
