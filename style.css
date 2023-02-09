@@ -1,0 +1,11 @@
+#canvas {
+    padding: 0px;
+    margin: 0px;
+}
+body {background-color: black;}
+
+div {
+    color: white;
+    font-size: 1vw;
+    font-family: 'Roboto', sans-serif;
+  }
