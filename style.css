@@ -1,12 +1,24 @@
 #canvas {
     padding: 0px;
     margin: 0px;
+    position: absolute;
+    top: 0px;
+    z-index: -1;
 }
 body {background-color: black;}
 
 div {
+    top: 0px;
+    background-color: black;
+    opacity: 0.3;
     color: white;
     font-size: 20px;
     /* font-size: 1.5vh;; */
     font-family: 'Roboto', sans-serif;
+    width: max-content;
+
+  }
+
+  div:hover {
+    opacity: 0.9;
   }
